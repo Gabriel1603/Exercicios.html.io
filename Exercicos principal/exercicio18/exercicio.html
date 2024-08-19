@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Botões</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .custom-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .custom-radio,
+        .custom-checkbox {
+            display: none;
+        }
+
+        .custom-radio + label,
+        .custom-checkbox + label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .custom-radio + label::before,
+        .custom-checkbox + label::before {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 2px solid grey;
+            margin-right: 10px;
+            background-color: white;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .custom-radio:checked + label::before {
+            background-color: green;
+            border-color: green;
+        }
+
+        .custom-radio:checked + label::after {
+            content: '';
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-checkbox + label::before {
+            border-radius: 4px;
+        }
+
+        .custom-checkbox:checked + label::before {
+            background-color: green;
+            border-color: green;
+        }
+
+        .custom-checkbox:checked + label::after {
+            content: '✔';
+            color: white;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="custom-form">
+        <h2>Botões de Rádio e Checkboxes</h2>
+
+        <div>
+            <label>Selecione uma opção:</label>
+            <input type="radio" id="radio1" name="radio-group" class="custom-radio">
+            <label for="radio1">Opção 1</label>
+
+            <input type="radio" id="radio2" name="radio-group" class="custom-radio">
+            <label for="radio2">Opção 2</label>
+
+            <input type="radio" id="radio3" name="radio-group" class="custom-radio">
+            <label for="radio3">Opção 3</label>
+        </div>
+
+        <div>
+            <label>Selecione as opções:</label>
+            <input type="checkbox" id="checkbox1" class="custom-checkbox">
+            <label for="checkbox1">Opção A</label>
+
+            <input type="checkbox" id="checkbox2" class="custom-checkbox">
+            <label for="checkbox2">Opção B</label>
+
+            <input type="checkbox" id="checkbox3" class="custom-checkbox">
+            <label for="checkbox3">Opção C</label>
+        </div>
+    </div>
+</body>
+</html>
